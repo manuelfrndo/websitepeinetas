@@ -10,8 +10,10 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-    body {
+    html, body {
+      overscroll-behavior-y: none;
       font-family: 'EB Garamond', serif;
       color: white;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
@@ -37,6 +39,7 @@
     .carrusel-inner {
       display: flex;
       transition: transform 0.5s ease-in-out;
+      touch-action: pan-y;
     }
     .carrusel-inner img {
       width: 100%;
@@ -121,6 +124,14 @@
       index = (index + 1) % total;
       carrusel.style.transform = `translateX(-${index * 100}%)`;
     }, 4000);
+
+    // Evita rebote en scroll móvil al final de la página
+    window.addEventListener('touchmove', function(e) {
+      const bottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
+      if (bottom) {
+        e.preventDefault();
+      }
+    }, { passive: false });
   </script>
 
 </body>
