@@ -24,35 +24,35 @@
       background-size: cover;
       background-position: center;
       text-align: center;
-      padding: 40px;
+      padding: 20px;
+      flex-direction: column;
     }
-    h1, h2 {
-      margin-bottom: 20px;
-      font-size: 3em;
-    }
-    .carrusel {
-      display: flex;
+    .carrusel-container {
+      width: 90%;
+      max-width: 360px;
       overflow: hidden;
-      width: 80%;
-      max-width: 600px;
-      margin: auto;
       position: relative;
+      border-radius: 10px;
     }
-    .carrusel img {
-      min-width: 100%;
+    .carrusel-inner {
+      display: flex;
       transition: transform 0.5s ease-in-out;
     }
+    .carrusel-inner img {
+      width: 100%;
+      flex-shrink: 0;
+    }
     .info-text, .dress-text {
-      max-width: 600px;
-      margin: auto;
+      max-width: 90%;
       background-color: rgba(0, 0, 0, 0.4);
       padding: 20px;
       border-radius: 10px;
+      font-size: 1.1em;
     }
     #lista-deseos button {
       margin-top: 20px;
       padding: 10px 20px;
-      font-size: 1.2em;
+      font-size: 1.1em;
       background-color: #fff;
       color: #000;
       border: none;
@@ -61,8 +61,8 @@
     }
     iframe {
       border: 0;
-      width: 80%;
-      height: 400px;
+      width: 90%;
+      height: 300px;
       border-radius: 10px;
     }
   </style>
@@ -72,16 +72,16 @@
   <section id="portada" style="background-image: url('https://i.imgur.com/GXvmBXP.jpeg');">
   </section>
 
-  <section id="nuestra-historia" style="background-image: url('https://i.imgur.com/BKxs4nU.jpeg'); flex-direction: column;">
-    <h1>Nuestra Historia</h1>
-    <div class="carrusel" id="carrusel">
-      <img src="https://i.imgur.com/GFQFl6U.jpeg" alt="Libro 1">
-      <img src="https://i.imgur.com/vmCBXOs.jpeg" alt="Libro 2">
+  <section id="nuestra-historia" style="background-image: url('https://i.imgur.com/BKxs4nU.jpeg');">
+    <div class="carrusel-container">
+      <div class="carrusel-inner" id="carrusel">
+        <img src="https://i.imgur.com/GFQFl6U.jpeg" alt="Libro 1">
+        <img src="https://i.imgur.com/vmCBXOs.jpeg" alt="Libro 2">
+      </div>
     </div>
   </section>
 
-  <section id="info-boda" style="background-image: url('https://i.imgur.com/sllivPT.jpeg'); flex-direction: column;">
-    <h1>Información de la Boda</h1>
+  <section id="info-boda" style="background-image: url('https://i.imgur.com/sllivPT.jpeg');">
     <div class="info-text">
       <p><strong>Día:</strong> 16 enero del 2025</p>
       <p><strong>Hora:</strong> 18:00 hrs</p>
@@ -89,13 +89,11 @@
     </div>
   </section>
 
-  <section id="como-llegar" style="background-image: url('https://i.imgur.com/t6QcBZB.jpeg'); flex-direction: column;">
-    <h1>Cómo Llegar</h1>
+  <section id="como-llegar" style="background-image: url('https://i.imgur.com/t6QcBZB.jpeg');">
     <iframe src="https://www.google.com/maps?q=Centro+de+Eventos+Faisanes+de+Metrenco&output=embed"></iframe>
   </section>
 
-  <section id="codigo-vestimenta" style="background-image: url('https://i.imgur.com/Rmc25AT.jpeg'); flex-direction: column;">
-    <h1>Código de Vestimenta</h1>
+  <section id="codigo-vestimenta" style="background-image: url('https://i.imgur.com/Rmc25AT.jpeg');">
     <div class="dress-text">
       <p>Te queremos dar una orientación respecto al vestuario que mejor calzará con el evento de este día.</p>
       <p><strong>Formal elegante</strong></p>
@@ -105,8 +103,7 @@
     </div>
   </section>
 
-  <section id="lista-deseos" style="background-image: url('https://i.imgur.com/4rHq9Ii.jpeg'); flex-direction: column;">
-    <h1>Lista de Deseos</h1>
+  <section id="lista-deseos" style="background-image: url('https://i.imgur.com/4rHq9Ii.jpeg');">
     <p>Gracias por querer ser parte de este día tan especial. Hemos preparado una lista con ideas que podrían inspirarte.</p>
     <button onclick="window.location.href='#'">Ver Catálogo</button>
   </section>
@@ -115,11 +112,13 @@
   </section>
 
   <script>
-    // Carrusel
+    // Carrusel mejorado
     const carrusel = document.getElementById('carrusel');
     let index = 0;
+    const total = carrusel.children.length;
+
     setInterval(() => {
-      index = (index + 1) % carrusel.children.length;
+      index = (index + 1) % total;
       carrusel.style.transform = `translateX(-${index * 100}%)`;
     }, 4000);
   </script>
