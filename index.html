@@ -1,211 +1,128 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terrenos en Las Peinetas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-image: url('https://i.imgur.com/o4rbNiF.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            backdrop-filter: blur(10px);
-        }
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;  /* Mantener a 20px desde el fondo */
-            right: 20px;   /* Mantener a 20px desde la derecha */
-            z-index: 99999; /* Un z-index muy alto para asegurarse de que esté encima de todo */
-            background-color: #25D366;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;  /* Para suavizar el efecto si hay algo que afecta el scroll */
-        }
-
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Boda</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'EB Garamond', serif;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 40px;
+    }
+    h1, h2 {
+      margin-bottom: 20px;
+      font-size: 3em;
+    }
+    .carrusel {
+      display: flex;
+      overflow: hidden;
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      position: relative;
+    }
+    .carrusel img {
+      min-width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .info-text, .dress-text {
+      max-width: 600px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    #lista-deseos button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    iframe {
+      border: 0;
+      width: 80%;
+      height: 400px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-<body class="bg-green-50 text-gray-800 font-roboto">
-    <a href="https://wa.me/56958608263?text=Hola.%20Estoy%20interesado!!" class="whatsapp-btn">WhatsApp</a>
+<body>
 
-    <!-- Encabezado -->
-    <header class="text-center py-12 px-6 bg-gradient-to-r from-green-800 to-green-600 text-white shadow-2xl">
-        <h1 class="text-5xl font-black tracking-wide uppercase">Exclusivos Terrenos en Las Peinetas</h1>
-        <p class="text-xl mt-4 font-light italic">Inversión segura en un entorno natural incomparable</p>
-    </header>
+  <section id="portada" style="background-image: url('https://i.imgur.com/GXvmBXP.jpeg');">
+  </section>
 
-    <!-- Sección de Presentación -->
-    <section class="text-center py-16 px-6">
-        <h2 class="text-3xl font-semibold text-green-800 bg-white p-4 rounded-lg shadow-lg inline-block">
-            Vive rodeado de bosques y montañas en la Araucanía
-        </h2>
-        <div class="relative w-full max-w-2xl mx-auto mt-6">
-            <div id="carousel" class="flex overflow-hidden rounded-lg shadow-xl">
-                <img src="https://i.imgur.com/ANdNwuf.jpeg" alt="Paisaje Las Peinetas" class="w-full h-auto transition-transform duration-500">
-                <img src="https://i.imgur.com/gB8f5Yq.jpeg" alt="Bosques Nativos" class="w-full h-auto transition-transform duration-500 hidden">
-                <img src="https://i.imgur.com/kOKd4Xm.jpeg" alt="Vista Panorámica" class="w-full h-auto transition-transform duration-500 hidden">
-                <img src="https://i.imgur.com/o4rbNiF.jpeg" alt="Vista Panorámica" class="w-full h-auto transition-transform duration-500 hidden">
-                
-            </div>
-            <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-700 text-white px-3 py-2 rounded-full shadow-lg">&#10094;</button>
-            <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-700 text-white px-3 py-2 rounded-full shadow-lg">&#10095;</button>
-        </div>
-        
-    </section>
+  <section id="nuestra-historia" style="background-image: url('https://i.imgur.com/BKxs4nU.jpeg'); flex-direction: column;">
+    <h1>Nuestra Historia</h1>
+    <div class="carrusel" id="carrusel">
+      <img src="https://i.imgur.com/GFQFl6U.jpeg" alt="Libro 1">
+      <img src="https://i.imgur.com/vmCBXOs.jpeg" alt="Libro 2">
+    </div>
+  </section>
 
-    <!-- Características del Lugar -->
-    <section class="text-center py-16 px-6 bg-green-100">
-        <h2 class="text-3xl font-semibold text-green-800 mb-8">Características del Entorno</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold text-green-700">Paisajes Únicos</h3>
-                <p class="text-gray-700">Terrenos rodeados de montañas y bosques nativos, con vistas espectaculares en cada estación.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold text-green-700">Ubicación Privilegiada</h3>
-                <p class="text-gray-700">Cerca del pueblo de Curarrehue y del Paso Internacional Mamuil Malal.</p>
-            </div>
-        </div>
-    </section>
+  <section id="info-boda" style="background-image: url('https://i.imgur.com/sllivPT.jpeg'); flex-direction: column;">
+    <h1>Información de la Boda</h1>
+    <div class="info-text">
+      <p><strong>Día:</strong> 16 enero del 2025</p>
+      <p><strong>Hora:</strong> 18:00 hrs</p>
+      <p><strong>Lugar:</strong> Centro de Eventos Faisanes de Metrenco, Camino Illaf S/Nº, Comuna de Padre las Casas, Araucanía.</p>
+    </div>
+  </section>
 
-    <!-- Sección de Venta -->
-    <section class="text-center py-16 px-6 bg-green-200">
-        <h2 class="text-3xl font-semibold text-green-800 mb-6">Terrenos Disponibles</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-semibold text-green-700">5000 m²</h3>
-                <p class="text-xl text-green-700 font-bold mt-2">$25.000.000</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-semibold text-green-700">1 Hectárea</h3>
-                <p class="text-xl text-green-700 font-bold mt-2">$45.000.000</p>
-            </div>
-        </div>
-    </section>
-    <!-- Beneficios de la Compra -->
-    <section class="text-center py-16 px-6 bg-white">
-        <h2 class="text-3xl font-semibold text-green-800 mb-6">¿Por qué elegir Las Peinetas?</h2>
-        <ul class="text-lg text-gray-700 space-y-4 max-w-3xl mx-auto">
-            <li>🌿 Naturaleza virgen con vistas impresionantes a montañas y bosques nativos.</li>
-            <li>💧 Acceso a agua y electricidad, facilitando la construcción de viviendas o proyectos turísticos.</li>
-            <li>🚗 Ubicación privilegiada cerca de Curarrehue y Villarrica.</li>
-            <li>🏕️ Oportunidad única para inversión en ecoturismo y conservación.</li>
-            <li>📜 Venta con documentación en regla, sin complicaciones legales.</li>
-        </ul>
-    </section>
+  <section id="como-llegar" style="background-image: url('https://i.imgur.com/t6QcBZB.jpeg'); flex-direction: column;">
+    <h1>Cómo Llegar</h1>
+    <iframe src="https://www.google.com/maps?q=Centro+de+Eventos+Faisanes+de+Metrenco&output=embed"></iframe>
+  </section>
 
-    <!-- Financiamiento -->
-    <section class="text-center py-16 px-6 bg-green-100">
-        <h2 class="text-3xl font-semibold text-green-800 mb-6">Opciones de Financiamiento</h2>
-        <p class="text-lg text-gray-700 mb-4">Ofrecemos facilidades de pago y asesoría en financiamiento.</p>
-        <p class="text-lg text-gray-700">Consulta por opciones de pago en cuotas y financiamiento bancario.</p>
-    </section>
-    <!-- Sección de Ubicación Geográfica -->
-    <section class="text-center py-16 px-6 bg-green-100">
-        <h2 class="text-3xl font-semibold text-green-800 mb-6">Ubicación Geográfica</h2>
-        <p class="text-lg text-gray-700 mb-4">Los terrenos se encuentran en la región de La Araucanía, cerca del pueblo de Curarrehue y del Paso Internacional Mamuil Malal, ofreciendo acceso a paisajes naturales impresionantes.</p>
-        <div class="w-full max-w-4xl mx-auto">
-            <iframe class="w-full h-96 rounded-lg shadow-lg" 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18511.23456789012!2d-71.625987!3d-39.367894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961abcf123456789%3A0xabcdef123456789!2sCurarrehue%2C%20Araucan%C3%ADa%2C%20Chile!5e0!3m2!1ses!2scl!4v1670000000000" 
-                allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-    <!-- Contacto -->
-    <section class="text-center py-16 px-6">
-        <div class="bg-white p-8 rounded-lg shadow-xl inline-block mb-6">
-            <h2 class="text-3xl font-semibold text-green-800 mb-6">¿Interesado?</h2>
-            <p class="text-xl text-gray-700 mb-6">Contáctanos por WhatsApp para más información.</p>
-        </div>
-        <a href="https://wa.me/958608263?text=Hola,%20me%20interesa%20un%20terreno%20en%20Las%20Peinetas.%20Quisiera%20más%20información." 
-           target="_blank" 
-           class="inline-block bg-green-600 text-white py-4 px-8 rounded-lg shadow-xl text-lg font-bold hover:bg-green-700 transform hover:scale-105 transition duration-300">
-            Contactar</a>
-    </section>
-    <!-- Sección de Testimonios -->
-    <section class="text-center py-16 px-6 bg-white">
-        <h2 class="text-3xl font-semibold text-green-800 mb-6">Testimonios de Clientes</h2>
-        <div id="testimonios" class="relative w-full max-w-2xl mx-auto">
-            <div class="bg-green-100 p-6 rounded-lg shadow-lg">
-                <p id="testimonio-texto" class="text-lg text-gray-700 italic">"Un lugar increíble para invertir, la mejor decisión que he tomado."</p>
-                <p id="testimonio-nombre" class="text-green-700 font-semibold mt-4">- Juan Pérez</p>
-            </div>
-        </div>
-    </section>
+  <section id="codigo-vestimenta" style="background-image: url('https://i.imgur.com/Rmc25AT.jpeg'); flex-direction: column;">
+    <h1>Código de Vestimenta</h1>
+    <div class="dress-text">
+      <p>Te queremos dar una orientación respecto al vestuario que mejor calzará con el evento de este día.</p>
+      <p><strong>Formal elegante</strong></p>
+      <p>Hombres: Traje formal, colores neutros.</p>
+      <p>Mujeres: Vestidos elegantes, tonos neutros o pasteles.</p>
+      <p><em>Evitar:</em> Blanco, marfil, rosado, azul pastel o tonos muy similares (reservados para la boda).</p>
+    </div>
+  </section>
 
-    <!-- Simulador de Cuotas -->
-    <section class="text-center py-16 px-6 bg-green-100">
-        <h2 class="text-3xl font-semibold text-green-800 mb-6">Simulador de Cuotas</h2>
-        <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-            <label class="block text-lg font-medium text-gray-700">Precio del Terreno:</label>
-            <input type="number" id="precio" class="w-full border rounded-lg p-2 mt-2 mb-4" placeholder="Ej. 25000000">
-            
-            <label class="block text-lg font-medium text-gray-700">Pago Inicial:</label>
-            <input type="number" id="inicial" class="w-full border rounded-lg p-2 mt-2 mb-4" placeholder="Ej. 5000000">
-            
-            <label class="block text-lg font-medium text-gray-700">Plazo (meses):</label>
-            <input type="number" id="plazo" class="w-full border rounded-lg p-2 mt-2 mb-4" placeholder="Ej. 60">
-            
-            <button onclick="calcularCuota()" class="bg-green-700 text-white px-4 py-2 rounded-lg mt-4">Calcular</button>
-            <p id="resultado" class="text-lg text-green-800 font-bold mt-4"></p>
-        </div>
-    </section>
-    <script>
-        // Testimonios dinámicos
-        const testimonios = [
-            { texto: "¡Una compra increíble, todo el proceso fue transparente!", nombre: "Ana Ríos" },
-            { texto: "Invertí y ya he visto una gran valorización del terreno.", nombre: "Carlos Martínez" },
-            { texto: "Un lugar maravilloso, perfecto para la desconexión y naturaleza.", nombre: "María López" }
-        ];
-        let indexTestimonio = 0;
-        setInterval(() => {
-            indexTestimonio = (indexTestimonio + 1) % testimonios.length;
-            document.getElementById('testimonio-texto').textContent = testimonios[indexTestimonio].texto;
-            document.getElementById('testimonio-nombre').textContent = `- ${testimonios[indexTestimonio].nombre}`;
-        }, 5000);
+  <section id="lista-deseos" style="background-image: url('https://i.imgur.com/4rHq9Ii.jpeg'); flex-direction: column;">
+    <h1>Lista de Deseos</h1>
+    <p>Gracias por querer ser parte de este día tan especial. Hemos preparado una lista con ideas que podrían inspirarte.</p>
+    <button onclick="window.location.href='#'">Ver Catálogo</button>
+  </section>
 
-        // Simulador de Cuotas
-        function calcularCuota() {
-            let precio = parseFloat(document.getElementById('precio').value);
-            let inicial = parseFloat(document.getElementById('inicial').value);
-            let plazo = parseInt(document.getElementById('plazo').value);
-            if (!precio || !inicial || !plazo || plazo <= 0) {
-                document.getElementById('resultado').textContent = "Por favor, ingrese valores válidos.";
-                return;
-            }
-            let saldo = precio - inicial;
-            let cuotaMensual = (saldo / plazo).toFixed(2);
-            document.getElementById('resultado').textContent = `Cuota Mensual: $${cuotaMensual}`;
-        }
-    </script>
+  <section id="confirmacion" style="background-image: url('https://i.imgur.com/KMUnQUP.jpeg');">
+  </section>
 
-    <!-- Pie de página -->
-    <footer class="text-center py-6 bg-green-700 text-white mt-12 shadow-inner">
-        <p class="text-lg">&copy; 2025 Terrenos Las Peinetas. Todos los derechos reservados.</p>
-    </footer>
+  <script>
+    // Carrusel
+    const carrusel = document.getElementById('carrusel');
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % carrusel.children.length;
+      carrusel.style.transform = `translateX(-${index * 100}%)`;
+    }, 4000);
+  </script>
 
-    <script>
-        // Función para el carrusel de imágenes
-        const images = document.querySelectorAll('#carousel img');
-        let currentIndex = 0;
-
-        document.getElementById('next').addEventListener('click', () => {
-            images[currentIndex].classList.add('hidden');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.remove('hidden');
-        });
-
-        document.getElementById('prev').addEventListener('click', () => {
-            images[currentIndex].classList.add('hidden');
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            images[currentIndex].classList.remove('hidden');
-        });
-    </script>
 </body>
 </html>
