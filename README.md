@@ -1,2 +1,2 @@
-# websitepeinetas
+# boda
 My personal website
