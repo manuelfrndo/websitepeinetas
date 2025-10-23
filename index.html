@@ -1162,7 +1162,8 @@ function reserveGift(giftId, giftName) {
         sessionStorage.setItem('currentGiftId', giftId);
         
         // Mostrar modal de datos bancarios
-        showBankModal(giftName);
+		showBankModal(giftName, giftId);
+
     }
 }
 
